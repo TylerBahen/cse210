@@ -17,9 +17,10 @@ class Program
             string[] scriptureRaw = scripturesRaw[selected].Split("~");
             Scripture scripture = new Scripture(scriptureRaw[0],new Reference(scriptureRaw[1],int.Parse(scriptureRaw[2]),int.Parse(scriptureRaw[3]),int.Parse(scriptureRaw[4])));
             scripture.Display();
-            while (!scripture.IsTotallyHidden())
+            string input = "";
+            while (!scripture.IsTotallyHidden() && input!="quit")
             {
-                Console.ReadLine();
+                input = Console.ReadLine();
                 scripture.HideRandomWord();
                 scripture.Display();
             }
