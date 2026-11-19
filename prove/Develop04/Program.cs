@@ -1,4 +1,5 @@
 using System;
+using Activites;
 
 class Program
 {
@@ -7,12 +8,24 @@ class Program
         bool running = true;
         while (running)
         {
-            Console.WriteLine("Please select an activity:\n1. Breathing Activity");
+            Console.WriteLine("Please select an activity:\n1. Breathing Activity\n2. Reflection\n3. Listing\n4. Quit");
             string selection = Console.ReadLine();
-            if (selection="1")
+            if (selection == "1")
             {
-                Console.WriteLine("How long would you like to breathe for? (This activity guides you in 8 second cycles)");
-                string durationRaw = Console.ReadLine();
+                Breathing activity = new Breathing();
+            }
+            else if (selection == "2")
+            {
+                Reflection activity = new Reflection();
+            }
+            else if (selection == "3")
+            {
+                Listing activity = new Listing();
+            }
+            else if (selection == "4")
+            {
+                Console.WriteLine("Thank you, have a nice day :)");
+                running = false;
             }
         }
     }
